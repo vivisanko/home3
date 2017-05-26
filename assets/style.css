@@ -3,10 +3,16 @@ background-color: rgb(221,221,221);
     /*color: rgb(100,100,100);*/
 }
 .one,.two,.three {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
-    flex-direction: row;
-    justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
 }
 .hand1,.hand2 {
     border: 3px solid rgb(100,100,100);
@@ -56,31 +62,56 @@ h1 {
 .roll {
     position: absolute;
     right: calc(50% - 125px);
-    animation: raise 10s ease-out;
+    -webkit-animation: raise 10s ease-out;
+            animation: raise 10s ease-out;
     
-    animation-direction: reverse;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
+    -webkit-animation-direction: reverse;
+    
+            animation-direction: reverse;
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
 
 }
 
 .history {
     position: absolute;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
 }
 .preface {
   position: absolute;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards; 
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; 
   /*animation: flyFaceLeft 2s ease;*/
   
 }
 
 
+@-webkit-keyframes raise {
+    from {-webkit-transform: rotate(0);transform: rotate(0);}
+    to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+
+
 @keyframes raise {
-    from {transform: rotate(0);}
-    to {transform: rotate(360deg);}
+    from {-webkit-transform: rotate(0);transform: rotate(0);}
+    to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+
+@-webkit-keyframes flyFaceLeft {
+    0% {top:100px;
+        left:250px;}
+    100% {top:100px;
+        left: 300px;
+        -webkit-transform: skewY(30deg);
+                transform: skewY(30deg);}
+     
 }
 
 @keyframes flyFaceLeft {
@@ -88,40 +119,85 @@ h1 {
         left:250px;}
     100% {top:100px;
         left: 300px;
-        transform: skewY(30deg);}
+        -webkit-transform: skewY(30deg);
+                transform: skewY(30deg);}
      
+}
+@-webkit-keyframes flyFaceRight {
+    0% {top:100px;
+        right: 250px;}
+    100% {top:100px;
+        right: 300px;
+        -webkit-transform: skewY(30deg);
+                transform: skewY(30deg);}
+
 }
 @keyframes flyFaceRight {
     0% {top:100px;
         right: 250px;}
     100% {top:100px;
         right: 300px;
-        transform: skewY(30deg);}
+        -webkit-transform: skewY(30deg);
+                transform: skewY(30deg);}
 
+}
+
+
+@-webkit-keyframes flyLeft {
+    0% {top:100px;
+        left:300px;}
+    25% {-webkit-transform: skewY(30deg);transform: skewY(30deg);
+         }    
+    50%{top:100px;
+        left: 350px;
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);}    
+    100% {top:420px;
+        left: 350px;
+        -webkit-transform: scale(0.8);
+                transform: scale(0.8);}  
 }
 
 
 @keyframes flyLeft {
     0% {top:100px;
         left:300px;}
-    25% {transform: skewY(30deg);
+    25% {-webkit-transform: skewY(30deg);transform: skewY(30deg);
          }    
     50%{top:100px;
         left: 350px;
-        transform: scale(1.2);}    
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);}    
     100% {top:420px;
         left: 350px;
-        transform: scale(0.8);}  
+        -webkit-transform: scale(0.8);
+                transform: scale(0.8);}  
+}
+@-webkit-keyframes flyRight {
+    0% {top:100px;
+        right: 300px;}
+    25% {-webkit-transform: skewY(30deg);transform: skewY(30deg);
+         }    
+    50%{top:100px;
+        right: 350px;
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);}    
+    100% {top:420px;
+        right: 350px;
+        -webkit-transform: scale(0.8);
+                transform: scale(0.8);}  
 }
 @keyframes flyRight {
     0% {top:100px;
         right: 300px;}
-    25% {transform: skewY(30deg);
+    25% {-webkit-transform: skewY(30deg);transform: skewY(30deg);
          }    
     50%{top:100px;
         right: 350px;
-        transform: scale(1.2);}    
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);}    
     100% {top:420px;
         right: 350px;
-        transform: scale(0.8);}  
+        -webkit-transform: scale(0.8);
+                transform: scale(0.8);}  
 }        
