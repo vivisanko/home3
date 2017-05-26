@@ -1,0 +1,127 @@
+body {margin: 0;
+background-color: rgb(221,221,221); 
+    /*color: rgb(100,100,100);*/
+}
+.one,.two,.three {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.hand1,.hand2 {
+    border: 3px solid rgb(100,100,100);
+    width: 180px;
+    height: 250px;
+}
+.hands {
+    display: none;
+}
+.three {height: 100px;
+ margin-top: 30px;
+}
+
+.drum:before {
+display: block;
+    content: "\21D3";
+font-size: 50px;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+}
+.score>h1 {
+    width: 150px;
+}    
+
+.drum {
+    position: relative;
+    /*display: none;*/
+
+    
+}
+.mainSuit {
+     position: relative;
+      opacity: 1;
+   }
+   
+.mainSuit>img {
+    position: absolute;
+    right: calc(50% - 125px);
+    /*display: none;*/
+}
+.center {
+    width: 300px;
+}
+
+.roll {
+    position: absolute;
+    right: calc(50% - 125px);
+    animation: raise 10s ease-out;
+    
+    animation-direction: reverse;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+
+}
+
+.history {
+    position: absolute;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.preface {
+  position: absolute;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+  /*animation: flyFaceLeft 2s ease;*/
+  
+}
+
+
+@keyframes raise {
+    from {transform: rotate(0);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes flyFaceLeft {
+    0% {top:100px;
+        left:250px;}
+    100% {top:100px;
+        left: 300px;
+        transform: skewY(30deg);}
+     
+}
+@keyframes flyFaceRight {
+    0% {top:100px;
+        right: 250px;}
+    100% {top:100px;
+        right: 300px;
+        transform: skewY(30deg);}
+
+}
+
+
+@keyframes flyLeft {
+    0% {top:100px;
+        left:300px;}
+    25% {transform: skewY(30deg);
+         }    
+    50%{top:100px;
+        left: 350px;
+        transform: scale(1.2);}    
+    100% {top:420px;
+        left: 350px;
+        transform: scale(0.8);}  
+}
+@keyframes flyRight {
+    0% {top:100px;
+        right: 300px;}
+    25% {transform: skewY(30deg);
+         }    
+    50%{top:100px;
+        right: 350px;
+        transform: scale(1.2);}    
+    100% {top:420px;
+        right: 350px;
+        transform: scale(0.8);}  
+}        
